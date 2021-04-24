@@ -5,7 +5,7 @@
       
      
   
-          <input type="text" class="form-control" v-model="keyword" placeholder="Search User">
+          <input type="text" class="form-control" v-model="keyword" placeholder="Search User...">
            <div class="input-group-append">
           <button class="btn btn-primary"  @click.prevent="search">Search</button>
            </div>
@@ -81,7 +81,7 @@ created(){
        
         this.user = res.data
         // console.log(res.data)
-        console.log(this.user)
+        // console.log(this.user)
        
     })
     // console.log(this.user)
@@ -99,8 +99,8 @@ methods:{
         .then(res=>{
             this.new_user = res.data
 
-            console.log(res.data)
-            console.log(this.new_user)
+            // console.log(res.data)
+            // console.log(this.new_user)
         })
         .catch(err=>{
             console.log(err)

@@ -10,13 +10,16 @@
                         <img class="ml-3" height="200px" width="200px" style="border-radius:100%" :src="user_info.avatar_url" alt="" />
                         <div class=" m-3 p-3">
                             <p class="lead">{{user_info.bio}}</p>
-                            <p>{{user_info.location}}</p>
-                           <div class="d-flex  " >
+                            <p>Location: {{user_info.location}}</p>
+                           <div class=" " >
                              <div class="badge badge-success mx-2 ">Followers : {{user_info.followers}}</div>
                             <div class="badge badge-info">Followers : {{user_info.followers}}</div>
+                            <p v-if="!user_info.hireable">Hireme</p>
+                                <p >Website : {{user_info.blog}}</p>
+                                <p v-if="user_info.hireable">Not working, Hireable</p>
                             <div class="col">
                                 <div v-if="user_info.email">
-                                <p>Hireme</p>
+                                
                             </div>
                             <div v-else>
                                 No email
@@ -49,8 +52,8 @@ created(){
     axios.get(`https://api.github.com/users/${this.$route.params.login}`)
     .then(res=>{
         this.user_info = res.data
-        console.log(this.user_info)
-        console.log(this.$route.params)
+        // console.log(this.user_info)
+        // console.log(this.$route.params)
     })
 }
 }
