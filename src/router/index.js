@@ -1,8 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import NProjress from 'nprogress';
+import 'nprogress/nprogress.css';
+
 
 Vue.use(VueRouter)
+
+
 
 const routes = [
   {
@@ -31,5 +36,20 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+
+
+router.beforeResolve((to, from, next) => {
+  if(to.path){
+    NProjress.start()
+  }
+  next()
+})
+
+router.afterEach(()=>{
+  NProjress.done()
+  
+})
+
 
 export default router

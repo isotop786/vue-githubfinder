@@ -13,8 +13,9 @@
  
     <div class="row mb-4 text-center" v-if="new_user !=null">
         <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-center">
             <h3>Search Result for {{new_user.login}}</h3>
+           
                 <div class="card" style="width: 18rem;">
                     <img :src="new_user.avatar_url" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -28,26 +29,23 @@
     </div>
 
 <hr>
- <div class="row mt-4 p-2">
-     
-    
 
-     
+ <div class="row mt-4 p-2">
+     <div class="col text-center mt-4">
+          <h2 class="display-4">Github Founders</h2>
+     </div>
+    
+        <div class="row">
           <div class="col-md-3 my-3" v-for="(u,i) in user" :key="i">
+    
                  <div class="card">
-           
+                    
                 <div class="card-body text-center">
                     <h5>{{u.login}}</h5>
-                <img :src="u.avatar_url" height="100px" width="100px" style="border-radius:100%"/>
-               
-               <!-- <button @click.prevent="single(u.login)">view</button> -->
-                <!-- <router-link class="btn btn-primary my-2" to="/single/:id">View</router-link> -->
-                <!-- -->
-                <router-link class="btn btn-primary my-2" :to="{name:'Single',params:{login:u.login} }">View Details</router-link>
-
-
-
+                     <img :src="u.avatar_url" height="100px" width="100px" style="border-radius:100%"/>  
+                <router-link class="btn btn-primary my-2 ml-3" :to="{name:'Single',params:{login:u.login} }">View Details</router-link>
             </div>
+        </div>
         </div>
     </div>
 </div>

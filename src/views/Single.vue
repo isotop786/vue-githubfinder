@@ -2,7 +2,9 @@
   <div class="container">
         <div class="row mt-4 p-3 pt-4">
             <div class="col">
+                <router-link class="btn btn-info my-3" to='/'>Back to Home page</router-link>
                 <div class="card card-default">
+
                     <div class="card-body ">
                         <h3>{{user_info.name}}</h3>
                         <img class="ml-3" height="200px" width="200px" style="border-radius:100%" :src="user_info.avatar_url" alt="" />
