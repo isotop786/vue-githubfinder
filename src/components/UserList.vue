@@ -5,7 +5,7 @@
       
      
   
-          <input type="text" class="form-control" v-model="keyword" placeholder="Search User...">
+          <input type="text" class="form-control" v-model="keyword" placeholder="Search User..." @keypress="search">
            <div class="input-group-append">
           <button class="btn btn-primary"  @click.prevent="search">Search</button>
            </div>

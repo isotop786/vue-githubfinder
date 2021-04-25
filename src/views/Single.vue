@@ -14,12 +14,16 @@
                            <div class=" " >
                              <div class="badge badge-success mx-2 ">Followers : {{user_info.followers}}</div>
                             <div class="badge badge-info">Followers : {{user_info.followers}}</div>
-                            <p v-if="!user_info.hireable">Hireme</p>
-                                <p >Website : {{user_info.blog}}</p>
+                            
+                                <p >Website : 
+                                     {{user_info.blog}}</p>
                                 <p v-if="user_info.hireable">Not working, Hireable</p>
+                               <p>Company: <span v-if="user_info.company">{{user_info.company}}</span><span v-else>User didn't add on profile</span></p>
+                               <p>Twitter: <span v-if="user_info.twitter_username">{{user_info.twitter_username}}</span><span v-else>User didn't add on profile</span></p>
+                                <a target="_blank" :href="user_info.html_url" class="my-3 btn btn-danger">view in github</a>
                             <div class="col">
                                 <div v-if="user_info.email">
-                                
+                                   <p>Email : {{user_info.email}}</p>
                             </div>
                             <div v-else>
                                 No email
