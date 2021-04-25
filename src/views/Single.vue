@@ -15,8 +15,8 @@
                              <div class="badge badge-success mx-2 ">Followers : {{user_info.followers}}</div>
                             <div class="badge badge-info">Followers : {{user_info.followers}}</div>
                             
-                                <p >Website : 
-                                     {{user_info.blog}}</p>
+                                <p class="my-2 ">Website : 
+                                     <a :href="user_info.blog">{{user_info.blog}}</a></p>
                                 <p v-if="user_info.hireable">Not working, Hireable</p>
                                <p>Company: <span v-if="user_info.company">{{user_info.company}}</span><span v-else>User didn't add on profile</span></p>
                                <p>Twitter: <span v-if="user_info.twitter_username">{{user_info.twitter_username}}</span><span v-else>User didn't add on profile</span></p>
